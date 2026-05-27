@@ -131,3 +131,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
