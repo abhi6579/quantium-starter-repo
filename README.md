@@ -1,4 +1,4 @@
-# 🍬 Pink Morsels Sales Visualiser
+# 🍬 Sales Visualiser
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
 [![Dash](https://img.shields.io/badge/Dash-3.3.0-purple.svg)](https://dash.plotly.com/)
@@ -145,6 +145,4 @@ The `run_tests.sh` script:
 
 <div align="center">
   Built with ❤️ for the Quantium Job Simulation
-  <br/>
-  © 2026 Pink Morsels Sales Analysis
 </div>
