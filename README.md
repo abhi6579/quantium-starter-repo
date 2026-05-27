@@ -1,52 +1,150 @@
-# Quantium Starter Repo
+# 🍬 Pink Morsels Sales Visualiser
 
-A Python-based starter repository for Quantium projects.
+[![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
+[![Dash](https://img.shields.io/badge/Dash-3.3.0-purple.svg)](https://dash.plotly.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)]()
 
-## Overview
+> **Quantium Job Simulation** - An interactive dashboard to analyse the impact of Pink Morsels price increase on sales revenue.
 
-This repository serves as a starting point for Quantium development, providing a foundational structure and setup for Python-based projects.
+## 📊 Overview
 
-## Features
+This project answers Soul Foods' critical business question: **"Were sales higher before or after the Pink Morsels price increase on 15th January 2021?"**
 
-- Python-based project structure
-- Ready to extend and customize
-- Clean starter template
+## 🏗️ System Architecture
 
-## Requirements
+```mermaid
+flowchart TD
+    A[processed_sales.csv] --> B[data_munger.py]
+    B --> C[app.py Dash Server]
+    C --> D[Region Radio Buttons]
+    D --> E[Interactive Line Chart]
+    E --> F[Business Answer]
+    
+    G[test_app.py] --> H[pytest]
+    H --> I[run_tests.sh CI/CD]
+    
+    style A fill:#e3f2fd
+    style C fill:#fce4ec
+    style F fill:#c8e6c9
+```
 
-- Python 3.x
+## 📁 Project Structure
 
-## Installation
+```
+quantium-starter-repo/
+├── app.py                      # Main Dash application
+├── test_app.py                 # Test suite (3 tests)
+├── data_munger.py              # Data preprocessing
+├── run_tests.sh                # CI/CD automation script
+├── conftest.py                 # Pytest fixtures
+├── pytest.ini                  # Pytest configuration
+├── requirements.txt            # Python dependencies
+├── processed_sales.csv         # Sales dataset
+└── README.md                   # Documentation
+```
 
-1. Clone the repository:
+## 🚀 Installation & Usage
+
 ```bash
+# 1. Clone the repository
 git clone https://github.com/abhi6579/quantium-starter-repo.git
 cd quantium-starter-repo
-```
 
-2. Set up a virtual environment (optional but recommended):
-```bash
+# 2. Create virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
 
-3. Install dependencies (if any):
-```bash
+# 3. Install dependencies
 pip install -r requirements.txt
+
+# 4. Run the Dash app
+python app.py
+
+# 5. Open browser to http://127.0.0.1:8050
 ```
 
-## Usage
+## 🧪 Running Tests
 
-Instructions for using this repository will be added as the project develops.
+```bash
+# Run test suite
+pytest test_app.py -v
 
-## Contributing
+# Or use automation script
+chmod +x run_tests.sh
+./run_tests.sh
+```
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
+**Expected Output:**
+```
+test_app.py::test_header_present PASSED              [33%]
+test_app.py::test_visualisation_present PASSED       [66%]
+test_app.py::test_region_picker_present PASSED       [100%]
+✅ ALL TESTS PASSED!
+```
 
-## License
+## 📊 Dashboard Features
 
-This project is open source and available under the MIT License.
+| Feature | Description |
+|---------|-------------|
+| 🌍 Region Filter | North, East, South, West, or All |
+| 📈 Interactive Chart | Hover for exact sales values |
+| 🔴 Price Marker | Red dashed line at Jan 15, 2021 |
+| 📉 Before/After | Visual comparison of sales trends |
 
-## Support
+## 💡 Business Conclusion
 
-For questions or issues, please open a GitHub issue or contact the repository maintainer.
+```
+╔════════════════════════════════════════════════════════╗
+║                                                        ║
+║   📈 BEFORE price increase:    $5,513 average daily   ║
+║   📉 AFTER price increase:     $4,029 average daily   ║
+║   📊 Change:                   -26.9%                 ║
+║                                                        ║
+║   ✅ Sales were HIGHER BEFORE the price increase      ║
+║      on 15th January 2021.                            ║
+║                                                        ║
+║   💡 Recommendation: Consider reverting to original   ║
+║      pricing or implementing a smaller increase.      ║
+║                                                        ║
+╚════════════════════════════════════════════════════════╝
+```
+
+## 🔄 CI/CD Pipeline (Bonus Task)
+
+The `run_tests.sh` script:
+- ✅ Activates virtual environment
+- ✅ Installs dependencies
+- ✅ Runs test suite
+- ✅ Returns exit code 0 (pass) or 1 (fail)
+
+## 📝 Task Completion Status
+
+| Task | Description | Status |
+|------|-------------|--------|
+| Task 4 | Dash app with region filter | ✅ Complete |
+| Task 5 | Test suite (3 tests) | ✅ Complete |
+| Task 6 | CI/CD bash script (Bonus) | ✅ Complete |
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| Dash | Web framework |
+| Plotly | Interactive charts |
+| pandas | Data manipulation |
+| pytest | Testing framework |
+| GitHub | Version control & CI/CD |
+
+## 🔗 Quick Links
+
+- [GitHub Repository](https://github.com/abhi6579/quantium-starter-repo)
+- [Dash Documentation](https://dash.plotly.com/)
+
+---
+
+<div align="center">
+  Built with ❤️ for the Quantium Job Simulation
+  <br/>
+  © 2026 Pink Morsels Sales Analysis
+</div>
